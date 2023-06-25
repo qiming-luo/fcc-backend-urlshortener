@@ -29,7 +29,7 @@ router.post('/shorturl', async function(req, res){
   const validOriginalUrl = verifyUrl(originalUrl);
   // step 2: 
   if(!validOriginalUrl){
-    res.status(400).json({error: 'invalid url'});
+    res.json({error: 'invalid url'});
   }else{
     // extract all shortUrls stored in db
     const shortUrls = await db.list(); // return an array
